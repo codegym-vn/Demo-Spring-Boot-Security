@@ -19,6 +19,13 @@ public class AppUserService implements IAppUserService, UserDetailsService {
     @Autowired
     private AppUserRepo appUserRepo;
 
+    public AppUserService() {
+    }
+
+    public AppUserService(AppUserRepo appUserRepo) {
+        this.appUserRepo = appUserRepo;
+    }
+
     @Override
     public Iterable<AppUser> findAll() {
         return appUserRepo.findAll();
